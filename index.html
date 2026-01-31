@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-7">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Online Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🧠 Knowledge Quiz</h1>
+            <p class="subtitle">Test your general knowledge!</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <div class="card">
+                <h2>Welcome to the Quiz!</h2>
+                <p>You'll face 5 questions. Each question has a 15-second timer.</p>
+                <ul class="info-list">
+                    <li>📝 Total Questions: 5</li>
+                    <li>⏱️ Time per Question: 15 seconds</li>
+                    <li>🎯 Passing Score: 60%</li>
+                </ul>
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span>Question <span id="current-question">1</span> of <span id="total-questions">5</span></span>
+                </div>
+                <div class="timer-container">
+                    <span class="timer-icon">⏱️</span>
+                    <span id="timer">15</span>s
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <div class="card">
+                <h3 id="question-text">Question goes here...</h3>
+                <div id="options-container" class="options-container">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+                <div id="feedback" class="feedback hidden"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-secondary hidden">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen hidden">
+            <div class="card result-card">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="score-display">
+                    <div class="score-circle" id="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-label">/ 5</span>
+                    </div>
+                </div>
+                <p id="result-message">Great job!</p>
+                <div class="result-stats">
+                    <p>Correct Answers: <span id="correct-count">0</span></p>
+                    <p>Wrong Answers: <span id="wrong-count">0</span></p>
+                    <p>Time Taken: <span id="time-taken">0</span> seconds</p>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
